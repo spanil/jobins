@@ -19,6 +19,10 @@ class CompanyResource extends JsonResource
             'company_name' => $this->company_name,
             'email' => $this->email,
             'phone_number' => $this->phone_number,
+            'import_errors' => $this->import_errors,
+            'is_duplicate' => $this->is_duplicate,
+            'duplicate_of' => $this->duplicate_of,
+            'import_batch' => $this->import_batch,
         ];
     }
 }
