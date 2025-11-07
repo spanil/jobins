@@ -20,5 +20,5 @@ interface CompanyRepositoryInterface
     
     public function markAsDuplicate(int $recordId, int $duplicateOfId): bool;
     
-    public function exportData(?string $filter = null): Collection;
+    public function exportData(?string $filter = null);
 }

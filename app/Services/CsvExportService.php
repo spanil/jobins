@@ -32,8 +32,8 @@ class CsvExportService
         fputcsv($file, ['company_name', 'email', 'phone_number']);
 
      
-        $data->chunk(1000)->each(function ($chunk) use ($file) {
-            foreach ($chunk as $record) {
+        $data->chunk(1000, function ($records) use ($file) {
+            foreach ($records as $record) {
                 fputcsv($file, [
                     $record->company_name,
                     $record->email,

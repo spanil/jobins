@@ -74,7 +74,7 @@ class CompanyRepository implements CompanyRepositoryInterface
             ]);
     }
 
-    public function exportData(?string $filter = null): Collection
+    public function exportData(?string $filter = null)
     {
         $query = $this->model->newQuery();
 
@@ -84,7 +84,6 @@ class CompanyRepository implements CompanyRepositoryInterface
             $query->where('is_duplicate', false);
         }
 
-        return $query->select('company_name', 'email', 'phone_number', 'is_duplicate', 'duplicate_of')
-            ->get();
+        return $query->select('company_name', 'email', 'phone_number', 'is_duplicate', 'duplicate_of');
     }
 }
